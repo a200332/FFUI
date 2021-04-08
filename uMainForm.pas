@@ -5,9 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, Winapi.TlHelp32, Winapi.ShellAPI, Winapi.ActiveX, Winapi.DirectShow9,
   System.SysUtils, System.StrUtils, System.Classes, System.Win.Registry, System.IniFiles, System.IOUtils, System.Types, System.Math, System.ImageList, System.DateUtils,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.ComCtrls, Vcl.Menus, Vcl.Clipbrd, Vcl.FileCtrl, Vcl.ImgList,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.ComCtrls, Vcl.Menus, Vcl.Clipbrd, Vcl.FileCtrl, Vcl.ImgList, Vcl.ExtDlgs,
   {第三方控件}
-  SynEdit, SynHighlighterJSON, DosCommand, uProcessAPI, Vcl.ExtDlgs;
+  SynEdit, SynHighlighterJSON, DosCommand, uProcessAPI;
 
 type
   { 打开文件方式：文件/文件夹/网络视频流地址 }
@@ -1661,17 +1661,6 @@ begin
     Free;
   end;
 end;
-
-// F:\Green\Tools\VideoProc\ffmpeg.exe  -hide_banner -y -noautorotate
-// -i D:\Temp\Reply.1988.E01.Bluray.1080p.HEVC.10bit.AC3-ENL@FRDS_00.mp4
-// -i C:\Users\dbyoung\AppData\Roaming\VideoProc\temp_P1XkOA\Reply.1988.E01.Bluray.1080p.HEVC.10bit.AC3-ENL@FRDS.ass -max_muxing_queue_size 1024
-// -c:v h264_nvenc -profile:v main -level:v 4.2 -pix_fmt yuv420p -rc vbr -cq 22 -qmin 5 -qmax 30 -g 250 -map 0:0 -an
-// -c:s:0 mov_text -map 1 -metadata:s:s:0 language=ave -t 300 -f mp4 -map_chapters -1
-// -metadata title=Reply.1988.E01.Bluray.1080p.HEVC.10bit.AC3-ENL@FRDS_00
-// -metadata artist=VideoProc
-// -metadata genre=视频
-// -metadata comment=Reply.1988.E01.Bluray.1080p.HEVC.10bit.AC3-ENL@FRDS_00
-// E:\Reply.1988.E01.Bluray.1080p.HEVC.10bit.AC3-ENL@FRDS_00.mp44
 
 procedure TfrmFFUI.btnMergeClick(Sender: TObject);
 var
